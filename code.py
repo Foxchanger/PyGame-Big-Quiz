@@ -7,7 +7,37 @@ HEIGHT = 720
 score = 0
 time_left = 10
 
-q1 = [""]
+q1 = ["Qual valor da soma 1+1?",
+"5","1","2","4",3 ]
+
+q2 = ["Qual é a letra que antecede a letra O no alfabeto brasileiro?",
+"N.","M","S","T",1 ]
+
+q3 = ["A qual banda de rock que o cantor britânico Fred Mercury pertenceu?",
+"Led Zeppelin","AC/DC","Guns N' Roses","Queen",4 ]
+
+q4 = ["Qual cidade brasileira é conhecida como a terra da garoa?",
+"Rio de Janeiro","Curitiba","Amazonas","São Paulo",4 ]
+
+q5 = ["Quantos segundos há em duas horas?",
+"2800","7200","6900","3600",1 ]
+
+question = [q1,q2,q3,q4,q5]
+question = question.pop(0)
+
+main_box = Rect(0,0,820,240)
+timer_box = Rect(0,0,240,240)
+answer_box1 = Rect(0,0,495,165)
+answer_box2 = Rect(0,0,495,165)
+answer_box3 = Rect(0,0,495,165)
+answer_box4 = Rect(0,0,495,165)
+
+main_box.move_ip(50,40)
+timer_box.move_ip(990,40)
+answer_box1.move_ip(50,358)
+answer_box2.move_ip(735,358)
+answer_box3.move_ip(50,538)
+answer_box4.move_ip(735,538)
 
 def draw ():
     screen.draw.filled_rect(main_box, "sky blue")
@@ -59,3 +89,5 @@ def update_time_left():
         game_over()
 
 clock.schedule_interval(update_time_left,1.0)        
+
+pgzrun.go()
